@@ -19,7 +19,7 @@ public class Borne extends Carte {
 
 	@Override
 	public String toString() {
-		return getType().getBorne();
+	    return km + " km";
 	}
 	
 
