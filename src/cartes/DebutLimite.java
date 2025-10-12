@@ -1,11 +1,9 @@
 package cartes;
 
 public class DebutLimite extends Limite {
-
-	@Override
-	public String toString() {
-	    return "Début de limitation";
-	}
-
-
+    @Override
+    public String toString() {
+        return "Limite 50";
+    }
 }
+
