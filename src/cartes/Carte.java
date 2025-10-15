@@ -10,7 +10,6 @@ public abstract class Carte {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        // délégation aux sous-classes si elles ont des attributs propres
         return true;
     }
 

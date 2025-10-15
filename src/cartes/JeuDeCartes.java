@@ -64,7 +64,7 @@ public class JeuDeCartes {
         return liste.toArray(new Carte[0]);
     }
 
-    // ✅ Vérifie que le nombre de chaque carte correspond à la configuration
+    
     public boolean checkCount() {
         Carte[] cartes = donnerCartes();
         for (Configuration config : configurations) {

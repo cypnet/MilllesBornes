@@ -12,10 +12,11 @@ public class Jeu {
         Carte[] cartes = jeuDeCartes.donnerCartes();
         List<Carte> listeCartes = new ArrayList<>();
         Collections.addAll(listeCartes, cartes);
+        
 
         listeCartes = GestionCartes.melanger(listeCartes);
 
-        this.sabot = new Sabot(listeCartes.toArray(new Carte[0]));
+        this.sabot = new Sabot(listeCartes.toArray(cartes));
     }
 
     public Sabot getSabot() {

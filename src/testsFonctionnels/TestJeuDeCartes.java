@@ -6,7 +6,7 @@ public class TestJeuDeCartes {
     public static void main(String[] args) {
         JeuDeCartes jeu = new JeuDeCartes();
         jeu.affichageJeuDeCartes();
-        System.out.println("Le jeu est conforme Ã  la configuration ? " + jeu.checkCount());
+        System.out.println("Le jeu est conforme A  la configuration ? " + jeu.checkCount());
     }
 }
 
