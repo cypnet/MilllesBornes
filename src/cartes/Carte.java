@@ -5,14 +5,13 @@ public abstract class Carte {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        return super.equals(obj);
+        return true;
     }
 
     @Override
     public int hashCode() {
     	return getClass().hashCode();
     }
-    //comparer par avec get et pas tout   super.equal
 }
 
 
