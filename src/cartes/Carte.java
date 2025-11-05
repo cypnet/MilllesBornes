@@ -12,6 +12,8 @@ public abstract class Carte {
     public int hashCode() {
         return toString().hashCode();
     }
+    
+    //comparer par avec
 }
 
 

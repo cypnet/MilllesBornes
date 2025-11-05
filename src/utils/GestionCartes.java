@@ -4,17 +4,16 @@ import java.util.*;
 
 public class GestionCartes {
 
+	private int index = new Random().nextInt(liste.size());
     // a) extraire : version simple
     public static <T> T extraire(List<T> liste) {
         if (liste.isEmpty()) throw new IllegalArgumentException("Liste vide !");
-        int index = new Random().nextInt(liste.size());
         return liste.remove(index);
     }
 
     // a) extraire : version avec ListIterator
     public static <T> T extraire(ListIterator<T> it, List<T> liste) {
         if (!it.hasNext()) throw new IllegalArgumentException("Liste vide !");
-        int index = new Random().nextInt(liste.size());
         T elem = liste.get(index);
         liste.remove(index);
         return elem;
@@ -31,7 +30,6 @@ public class GestionCartes {
 
     // c) vérifier le mélange
     public static <T> boolean verifierMelange(List<T> original, List<T> melange) {
-        if (original.size() != melange.size()) return false;
         Set<T> elements = new HashSet<>(original);
         for (T elem : elements) {
             if (Collections.frequency(original, elem) != Collections.frequency(melange, elem))
