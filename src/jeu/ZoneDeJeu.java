@@ -1,12 +1,16 @@
 package jeu;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
+import java.util.Set;
 
 import cartes.*;
 
 public class ZoneDeJeu {
-
+	
+	private Set<Botte> bottes = new HashSet<>();
     private List<Limite> pileLimites;
     private List<Bataille> pileBatailles;
     private List<Borne> collectionBornes;
