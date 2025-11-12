@@ -11,7 +11,6 @@ public class TestMethodeEquals {
         Attaque feuRouge1 = new Attaque(Type.FEU);
         Attaque feuRouge2 = new Attaque(Type.FEU);
         System.out.println("Deux cartes de feux rouge sont identiques ? " + feuRouge1.equals(feuRouge2));
-
         Attaque feuVert = new Attaque(Type.ESSENCE);
         System.out.println("La carte feu rouge et la carte feu vert sont identiques ? " + feuRouge1.equals(feuVert));
     }

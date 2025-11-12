@@ -25,10 +25,10 @@ public class TestSabot {
         System.out.println("\n--- Test d'exception ---");
         sabot = new Sabot(jeu.donnerCartes());
         try {
-            sabot.piocher(); // retire une carte
+            sabot.piocher(); 
             for (var it = sabot.iterator(); it.hasNext();) {
                 it.next();
-                sabot.ajouterCarte(new Botte(Type.ACCIDENT)); // doit lever exception
+                sabot.ajouterCarte(new Botte(Type.ACCIDENT));
             }
         } catch (Exception e) {
             System.out.println("Exception attendue : " + e);

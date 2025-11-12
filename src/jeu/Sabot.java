@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
 public class Sabot implements Iterable<Carte> {
     private Carte[] cartes;
     private int nbCartes;
-    private int modCount = 0; // Pour détecter les modifications concurrentes
+    private int modCount = 0; 
 
     public Sabot(Carte[] cartes) {
         this.cartes = cartes;
@@ -29,7 +29,6 @@ public class Sabot implements Iterable<Carte> {
         if (estVide())
             throw new IllegalStateException("Le sabot est vide !");
         Carte c = cartes[0];
-        // Décaler les cartes restantes
         System.arraycopy(cartes, 1, cartes, 0, nbCartes - 1);
         nbCartes--;
         modCount++;

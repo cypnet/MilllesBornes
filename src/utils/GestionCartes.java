@@ -5,10 +5,10 @@ import java.util.*;
 
 public class GestionCartes {
 
-    
+    public static final Random random = new Random();
     public static <T> T extraire(List<T> liste) {
         if (liste.isEmpty()) throw new IllegalArgumentException("Liste vide !");
-        int index = new Random().nextInt(liste.size());
+        int index = random.nextInt(liste.size());
         return liste.remove(index);
     }
 
@@ -21,7 +21,7 @@ public class GestionCartes {
         return elem;
     }
 
-    // b) mélanger
+    
     public static <T> List<T> melanger(List<T> liste) {
         List<T> copie = new ArrayList<>();
         while (!liste.isEmpty()) {

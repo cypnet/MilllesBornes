@@ -12,14 +12,14 @@ public class ZoneDeJeu {
     private Set<Botte> bottes = new HashSet<>();
 
     public void deposer(Carte carte) {
-        if (carte instanceof Borne) {
-            bornes.add((Borne) carte);
-        } else if (carte instanceof Limite) {
-            pileLimite.push((Limite) carte);
-        } else if (carte instanceof Bataille) {
-            pileBataille.push((Bataille) carte);
-        } else if (carte instanceof Botte) {
-            bottes.add((Botte) carte);
+        if (carte instanceof Borne borne) {
+            bornes.add(borne);
+        } else if (carte instanceof Limite limite) {
+            pileLimite.push(limite);
+        } else if (carte instanceof Bataille bataille) {
+            pileBataille.push(bataille);
+        } else if (carte instanceof Botte botte) {
+            bottes.add(botte);
         }
     }
 
@@ -84,9 +84,8 @@ public class ZoneDeJeu {
     }
 
     
-    public boolean estDepotLimiteAutorise(Limite limite) {
-        if (estPrioritaire()) return false;
-        return true;
+    public boolean estDepotLimiteAutorise() {
+    	return !estPrioritaire();
     }
 
     
@@ -99,10 +98,10 @@ public class ZoneDeJeu {
 
     
     public boolean estDepotAutorise(Carte carte) {
-        if (carte instanceof Botte) return true;
+        if (carte instanceof Botte) return true; 
         if (carte instanceof Borne) return peutAvancer();
-        if (carte instanceof Limite) return estDepotLimiteAutorise((Limite) carte);
-        if (carte instanceof Bataille) return estDepotBatailleAutorise((Bataille) carte);
+        if (carte instanceof Limite) return estDepotLimiteAutorise();
+        if (carte instanceof Bataille bataille) return estDepotBatailleAutorise(bataille);
         return false;
     }
 }

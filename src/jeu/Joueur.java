@@ -9,7 +9,8 @@ public class Joueur {
     private String nom;
     private MainJoueur main;
     private ZoneDeJeu zone;
-
+    private Random rand = new Random();
+    
     public Joueur(String nom) {
         this.nom = nom;
         this.main = new MainJoueur();
@@ -52,16 +53,14 @@ public class Joueur {
         return defausses;
     }
 
-
+    
     public Coup choisirCoup(Set<Joueur> participants) {
-        Random rand = new Random();
         Set<Coup> coups = coupsPossibles(participants);
 
         if (!coups.isEmpty()) {
             List<Coup> liste = new ArrayList<>(coups);
             return liste.get(rand.nextInt(liste.size()));
         }
-
         List<Coup> defausses = new ArrayList<>(coupsDefausse());
         return defausses.get(rand.nextInt(defausses.size()));
     }
